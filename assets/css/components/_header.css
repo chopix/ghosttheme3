@@ -16,11 +16,11 @@
     margin-right: var(--gap-sm);
 
     img { 
-      height: 36px;
+      height: auto;
       object-fit: contain;
       display: block;
-
-      @media (--mq-sm) {
+      max-width: 180px;
+      @media (--mq-lg) {
         max-width: 240px;
       }
     }
@@ -40,13 +40,13 @@
     white-space: nowrap; 
 
     &:before {
-      display: none;
+      /* display: none;
       content: "";
       width: 1px;
       height: 28px;
       background-color: var(--color-text);
       margin: 0 6px 0 8px;
-      opacity: 0.1;
+      opacity: 0.1; */
     }
 
     @mixin hide-scrollbar;
@@ -109,7 +109,8 @@
 
         &.nav-current {
           & > a { 
-            background-color: hsla(var(--color-bg-base-reverse) / 5%);
+            /* background-color: hsla(var(--color-bg-base-reverse) / 5%); */
+            color: var(--color-brand);
           }
         }
       } 
@@ -307,6 +308,10 @@
     }
   }
 
+  .signin-link {
+    color: var(--color-brand-secondary);
+  }
+
   &__user--toggle {
     display: flex;
     align-self: center;
@@ -375,7 +380,8 @@
 .header[data-header="sticky"] {
   position: sticky;
   margin-bottom: var(--gap-lg);
-  background-color: hsla(var(--color-bg-base) / 90%);
+  background-color: #EDEDED;
+  opacity: .8;
   backdrop-filter: blur(20px);
   box-shadow: 
     0px 2px 20px 2px rgb(0 0 0 / 2%),

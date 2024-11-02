@@ -17,7 +17,7 @@
   outline: none;
   cursor: pointer;
   border: var(--border-width) solid var(--bg-accent);
-  border-radius: var(--global-radius);
+  border-radius: var(--full-radius);
   padding: 0.75em 1.5em;
 
   i.icon, span.icon { margin-right: var(--gap-sm); }
@@ -91,6 +91,11 @@
   &--brand { 
     --text-accent: var(--color-brand-contrast);
     --bg-accent: var(--color-brand); 
+  }
+
+  &--brand-secondary { 
+    --text-accent: var(--color-brand-contrast);
+    --bg-accent: var(--color-brand-secondary); 
   }
 
   &--success {

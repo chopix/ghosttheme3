@@ -6,6 +6,7 @@
   --color-brand: var(--ghost-accent-color, #16d1aa); 
   --color-brand-contrast: #000;
   --color-brand-hsl: 167 81% 45%;
+  --color-brand-secondary: #FF671F;
 
   /* neutral colors */
   --color-black: hsl(0 0% 0%);

@@ -7,32 +7,11 @@
     <div id="hero-input-label" class="hero__description">
       {{#if @custom.cta_description}}{{{@custom.cta_description}}}{{else}}{{@site.description}}{{/if}}
     </div>
-    
-    {{!-- CTA button --}}
-    {{#match @custom.cta_button_link "subscribe-form"}}
-      {{!-- Subscribe form --}}
-      {{#if @site.members_enabled}}
-        {{#unless @site.members_invite_only}}
-          {{#unless @member}}
-            {{> subscribe-form 
-              form_type="signup"
-              form_style="inline-joined"
-              form_class=""
-              input_class=""
-              input_label="cta-input-label"
-              button_text=@custom.cta_button_text
-              button_class="btn--brand btn--gradient uppercase"
-            }}
-          {{/unless}}
-        {{/unless}}
-      {{/if}}
-    {{else}}
-      {{#if @custom.cta_button_link}}
-        <a href="{{@custom.cta_button_link}}" class="btn btn--brand">
-          {{@custom.cta_button_text}}
-        </a>
-      {{/if}}
-    {{/match}}
+
+    <div class="flex justify-sm gap m-t-lg">
+      <a href="{{@custom.app_url}}/register" class="btn signin-link btn--brand radius-full">{{t "Signup"}}</a>
+      <a href="{{@site.url}}/tools/" class="btn signup-link btn--brand-secondary radius-full">{{t "All Tools"}}</a>
+    </div>
   </div>
 
   {{!-- Regular user content, the site cover image is used --}}

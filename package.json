@@ -1,15 +1,15 @@
 {
-  "name": "rinne",
-  "description": "Rinne Ghost Theme",
-  "demo": "https://rinne.brightthemes.com",
-  "version": "1.6.0",
+  "name": "groupbuyseo",
+  "description": "Ghost Theme for Groupbuyseo.org",
+  "demo": "https://groupbuyseo.org",
+  "version": "1.6.1",
   "engines": {
     "ghost": ">=5.0.0"
   },
   "author": {
-    "name": "Bright Themes",
-    "email": "hi@brightthemes.com",
-    "url": "https://brightthemes.com"
+    "name": "Anisul Kibria",
+    "email": "a@anisul.com",
+    "url": "https://anisul.com"
   },
   "gpm": {
     "type": "theme",
@@ -26,7 +26,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/brightthemes/rinne-ghost.git"
+    "url": "https://github.com/ptsurajshukla007/GroupbuySEO-Ghost.git"
   },
   "scripts": {
     "dev": "gulp",
@@ -110,7 +110,7 @@
           "Quicksand",
           "Azeret Mono"
         ],
-        "default": "Figtree"
+        "default": "Outfit"
       },
       "header_position": {
         "type": "select",
@@ -119,7 +119,7 @@
           "sticky",
           "floating"
         ],
-        "default": "normal"
+        "default": "sticky"
       },
       "use_portal_links": {
         "type": "boolean",
@@ -174,7 +174,7 @@
           "top",
           "hidden"
         ],
-        "default": "sidebar",
+        "default": "top",
         "group": "homepage"
       },
       "resources_feed_layout": {
@@ -203,6 +203,10 @@
         "type": "boolean",
         "default": true,
         "group": "post"
+      },
+      "app_url": {
+        "type": "text",
+        "group": "homepage"
       }
     }
   }
