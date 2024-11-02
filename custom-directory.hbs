@@ -1,0 +1,67 @@
+{{!< default}}
+
+{{!-- Page Hero --}}
+{{#post}}
+  {{> post-hero 
+    image_style="hidden"
+  }}
+{{/post}}
+
+{{!-- Everything in a container --}}
+<div class="container wrapper">
+  <section class="section section-resources" id="resources">
+    <div class="resources" data-filter-position="{{@custom.resources_filter_position}}" data-category="all"
+      data-filter-count="{{post.tags.length}}">
+      {{#match @custom.resources_filter_position "!=" "hidden"}}
+
+        <nav class="resources-nav">
+          <ul class="resources-filter">
+            <li class="resources-filter-all">
+              <button class="resource-btn all">
+                <span class="resource-btn-name">{{t "All resources"}}</span>
+                <span data-count=""></span>
+              </button>
+            </li>
+            {{#foreach post.tags}}
+              <li style="--color-accent:{{#if accent_color}}{{accent_color}}{{else}}var(--color-brand){{/if}}">
+                <a href="#{{slug}}" class="resource-btn {{slug}}" data-category="{{slug}}">
+                  {{#if feature_image}}
+                    {{> image
+                      picture_class="flex"
+                      image_type="tag"
+                      image_class="lazyload resource-btn__img"
+                      image_url=feature_image
+                      size_xxs=true
+                      size_xs=true
+                    }}
+                  {{/if}}
+                  <span class="resource-btn-name">{{name}}</span>
+                  <span data-count></span>
+                </a>
+              </li>
+            {{/foreach}}
+          </ul>
+        </nav>
+      {{/match}}
+
+      <div class="resources-feed js-resources-feed m-b-xl" data-feed-layout="{{@custom.resources_feed_layout}}" data-not-found="{{t "No resources found"}}">
+        {{#get "posts" include="tags,authors,tiers" filter="tags:[{{post.tags}}]" limit="all"}}
+          {{#foreach posts}}
+            {{> resource-card}}
+          {{/foreach}}
+        {{/get}}
+      </div>
+    </div>
+
+    {{#page}}
+      {{#if html}}
+        <article class="{{post_class}} content post-access-{{visibility}}">
+          {{content}}
+        </article>
+      {{/if}}
+    {{/page}}
+
+    {{!-- Pagination --}}
+    {{!-- {{> pagination type="load-more"}} --}}
+  </section>
+</div>

@@ -1,0 +1,80 @@
+<div class="author-card in-post m-b-xl author-{{slug}}{{#if class}} {{class}}{{/if}}">
+  {{!-- Author cover image --}}
+  {{!-- <figure class="author-card__cover{{#unless cover_image}} is-color{{/unless}}">
+    {{#if cover_image}}
+      {{> image
+        image_type="author"
+        image_class="lazyload author-card__img"
+        image_url=cover_image
+        size_xs=true
+        size_s=true
+        size_m=true
+      }}
+    {{/if}}
+  </figure> --}}
+  
+  {{!-- Author profile image --}}
+  {{#if profile_image}}
+    <a href="{{url}}">
+      <figure class="author-card__profile">
+        {{> image
+          image_type="author"
+          image_class="lazyload author-card__img"
+          image_url=profile_image
+          size_xs=true
+          size_s=true
+          size_m=true
+        }}
+      </figure>
+    </a>
+  {{/if}}
+
+  {{!-- Author hero content --}}
+  <div class="author-card__content flex-1{{#if profile_image}} has-image{{/if}}">
+    {{!-- Name --}}
+    <h2 class="author-card__name"><a href="{{url}}">{{name}}</a></h2>
+    
+    {{#if bio}}<p class="author-card__bio">{{bio}}</p>{{/if}}
+    
+    {{!-- Post count & social --}}
+    <div class="author-card__info flex flex-cc">
+      {{!-- <span class="author-card__count">
+        {{> icon name="chart" size="sm" icon_class="m-r-xs"}}
+        {{plural count.posts empty=(t 'No posts') singular=(t '1 post') plural=(t '% posts')}}
+      </span> --}}
+
+      <ul class="author-card__social {{#if twitter}} has-twitter{{/if}}{{#if facebook}} has-facebook{{/if}}{{#if website}} has-website{{/if}}">
+        {{!-- Twitter --}}
+        {{#if twitter}}
+          <li>
+            <a href="{{twitter_url}}" class=""
+              title="Twitter" aria-label="Twitter"
+              target="_blank" rel="noopener noreferrer">
+              {{> icon name="twitter-x" size="sm"}}
+            </a>
+          </li>
+        {{/if}}
+        {{!-- Facebook --}}
+        {{#if facebook}}
+          <li>
+            <a href="{{facebook_url}}" class=""
+              title="Facebook" aria-label="Facebook"
+              target="_blank" rel="noopener noreferrer">
+              {{> icon name="facebook" size="sm"}}
+            </a>
+          </li>
+        {{/if}}
+        {{!-- Author website --}}
+        {{#if website}}
+          <li>
+            <a href="{{website}}" class=""
+              title="Website" aria-label="Website"
+              target="_blank" rel="noopener noreferrer">
+              {{> icon name="link" size="sm"}}
+            </a>
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</div>
