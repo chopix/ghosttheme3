@@ -2,6 +2,10 @@
   color: var(--color-brand)
 }
 
+.color-brand-secondary {
+  color: var(--color-brand-secondary)
+}
+
 .color-white {
   color: var(--color-white);
 }

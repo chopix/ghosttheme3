@@ -49,6 +49,7 @@
   --color-bg-reverse: var(--color-dark);
   --color-bg-base: 0 0% 100%;
   --color-bg-base-reverse: 0 0% 0%;
+  --color-bg-header-footer: #ededed;
 
   --color-border: hsl(0 0% 92%);
   --color-transparent: rgba(0, 0, 0, 0);
@@ -126,6 +127,7 @@
   --color-bg-reverse: var(--color-light);
   --color-bg-base: 0 0% 0%;
   --color-bg-base-reverse: 0 0% 100%;
+  --color-bg-header-footer: #1f1f1f;
   
   --color-border: hsl(0 0% 20%);
 }
