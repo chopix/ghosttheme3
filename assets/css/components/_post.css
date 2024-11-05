@@ -535,6 +535,14 @@
   }
 }
 
+
+.post-hero__excerpt span {
+  display: block;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-align: right;
+}
+
 .post-comments, .related-posts {
   min-width: 100%;
   border: 2px solid var(--color-border);

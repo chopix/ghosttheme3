@@ -380,7 +380,7 @@
 .header[data-header="sticky"] {
   position: sticky;
   margin-bottom: var(--gap-lg);
-  background-color: var(--color-bg-header-footer);
+  background-color: var(--color-bg-secondary);
   opacity: .8;
   backdrop-filter: blur(20px);
   box-shadow: 

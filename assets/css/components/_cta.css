@@ -55,6 +55,9 @@
     font-size: calc(1.2rem + 2vmin);
     margin-bottom: 0.5rem;
     line-height: 1.2;
+    span {
+      color: var(--color-brand-secondary);
+    }
   }
 
   &__description { 

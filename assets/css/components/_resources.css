@@ -238,8 +238,13 @@
   }
 
   &[data-image-style="medium"] img {
-    height: 72px;
-    width: auto; 
+    /* height: 72px;
+    width: auto;  */
+    max-width: 160px;
+    height: auto;
+    min-height: 72px;
+    max-height: 72px;
+    width: auto;
   }
 
   &[data-image-style="large"] img {
@@ -318,6 +323,16 @@
     opacity: 0.75;
     line-height: 1.6;
     flex: 1;
+
+    span {
+      display: block;
+      font-weight: 600;
+      margin-top: 1rem;
+      text-align: right;
+      position: absolute;
+      top: 0;
+      right: 1.5em;
+    }
   }
 
   &__tags {

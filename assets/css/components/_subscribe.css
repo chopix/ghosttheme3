@@ -10,7 +10,7 @@
   button, input { 
     width: 100%; 
     min-height: 46px;
-    border-radius: inherit;
+    border-radius: 50px;
 
     @media (--mq-sm) {
       min-height: 50px;

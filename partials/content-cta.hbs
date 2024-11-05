@@ -30,12 +30,12 @@
     {{/has}}
 
     {{#if @member}}
-      <a href="/account/"{{#if @custom.use_portal_links}} data-portal="account"{{/if}} class="btn btn--brand m-b">
+      <a href="/account/"{{#if @custom.use_portal_links}} data-portal="account"{{/if}} class="btn btn--brand m-b radius-full">
         {{t "Account"}}
       </a>
     {{else}}
       {{#if @site.members_enabled}}
-        <a href="/signup/"{{#if @custom.use_portal_links}} data-portal="signup"{{/if}} class="btn btn--brand m-b">
+        <a href="/signup/"{{#if @custom.use_portal_links}} data-portal="signup"{{/if}} class="btn btn--brand m-b radius-full">
           {{t "Subscribe"}}
         </a>
       {{/if}}

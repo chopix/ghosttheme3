@@ -3,7 +3,7 @@
   {{#get "posts" include="tags,authors,tiers" limit="5" filter="tags:[{{post.tags}}]+id:-{{post.id}}" as |related|}}
     {{#if posts}}
       <div class="related-posts radius-double p-lg flex-1 self-align-start">
-        <span class="section-title sm m-b uppercase">{{t "Read next"}}</span>
+        <span class="section-title sm m-b uppercase">{{t "Related"}}</span>
         <div class="post-list m-b-sm">
           {{#foreach related}}
             <a class="post-list-item" href="{{url}}">
