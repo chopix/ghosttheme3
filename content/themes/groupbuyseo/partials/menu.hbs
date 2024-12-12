@@ -1,0 +1,44 @@
+{{!-- Blog menu --}}
+<div class="menu js-menu">
+  <div class="menu__header flex content-end">
+    {{!-- Menu Button --}}
+    <button class="btn-toggle menu__toggle is-active js-menu-close"
+      type="button" title="{{t "Menu"}}" aria-label="{{t "Menu"}}">
+        <span></span>
+        <span></span>
+    </button>
+  </div>
+
+  {{!-- Navigation --}}
+  <nav class="menu__navigation">
+    {{navigation}}
+  </nav>
+
+  {{!-- User Buttons --}}
+  <div class="menu__actions flex w-100">
+    <a href="{{@custom.login_url}}"class="btn signin-link btn--bordered radius m-r radius-full">
+      {{t "Login"}}
+    </a>
+    <a href="{{@custom.register_url}}"class="btn signup-link btn--brand radius radius-full">
+      {{t "Register"}}
+    </a>
+  </div>
+
+  <template data-toggle-template>
+    <button class="submenu-toggle" onclick="this.parentNode.classList.toggle('is-active')" title="{{t "Menu toggle"}}" aria-label="{{t "Menu toggle"}}">
+      {{> icon name="chevron-down"}}
+    </button>
+  </template>
+
+  {{#contentFor "scripts"}}
+  <script>
+    const submenus = document.querySelectorAll('.menu .is-mainitem')
+    const toggle = document.querySelector('[data-toggle-template]');
+
+    submenus.forEach(menu => { 
+      const toggleBtn = toggle.content.cloneNode(true);
+      menu.appendChild(toggleBtn);
+    });
+  </script>
+  {{/contentFor}}
+</div>

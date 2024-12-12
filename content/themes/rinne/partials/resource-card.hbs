@@ -1,0 +1,54 @@
+{{!-- Post Card --}}
+<article class="resource-card{{#if feature_image}} has-img{{else}} no-image{{/if}}{{#if featured}} is-featured{{/if}}{{#if class}} {{class}}{{/if}} js-resource-card"
+  data-image-style="{{@custom.resources_card_image}}" data-tags="{{#foreach tags}}{{slug}}{{#unless @last}},{{/unless}}{{/foreach}}" data-show="true"> 
+  
+  {{!-- Feature Image --}}
+  {{#if feature_image}}
+    <a href="{{url}}">
+      <figure class="resource-card__media">
+        {{> image
+          image_type="post"
+          image_class="lazyload resource-card__img"
+          image_url=feature_image
+          size_s=true
+          size_m=true
+        }}
+      </figure>
+    </a>
+  {{/if}}
+
+
+  {{#if canonical_url}}
+    <a href="{{canonical_url}}" class="resource-card__external">
+      {{>icon name="external-link"}}
+    </a>
+  {{/if}}
+  {{!-- {{#if featured}}<span class="resource-card__featured">{{>icon name="fire"}}</span>{{/if}} --}}
+
+  {{!-- Resource card content --}}
+  <div class="resource-card__content {{content_class}}">
+    {{!-- Resource card title --}}
+    <h2 class="resource-card__title"><a href="{{url}}">{{title}}</a></h2>
+    {{!-- Resource card excerpt --}}
+    <p class="resource-card__excerpt">{{#if custom_excerpt}}{{custom_excerpt}}{{else}}{{excerpt words="20"}}{{/if}}</p>
+
+    {{!-- Resource card tags --}}
+    <div class="resource-card__tags">
+      {{#if featured}}
+        <span class="resource-card__featured" aria-label="{{t "Featured"}}">{{>icon size="sm" name="bolt"}}</span>
+      {{/if}}
+      {{#foreach tags limit="3"}}
+        <a href="{{url}}" {{#if accent_color}}style="--color-accent:{{accent_color}};"{{/if}}>{{name}}</a>
+      {{/foreach}}
+    </div>
+    
+    <div class="resource-rating{{#has tag="#1-star"}} star-1{{/has}}{{#has tag="#2-star"}} star-2{{/has}}{{#has tag="#3-star"}} star-3{{/has}}{{#has tag="#4-star"}} star-4{{/has}}{{#has tag="#5-star"}} star-5{{/has}}">
+      {{>icon name="star" size="sm" icon_class="filled"}}
+      {{>icon name="star" size="sm" icon_class="filled"}}
+      {{>icon name="star" size="sm" icon_class="filled"}}
+      {{>icon name="star" size="sm" icon_class="filled"}}
+      {{>icon name="star" size="sm" icon_class="filled"}}
+    </div>
+  </div>
+
+</article>
